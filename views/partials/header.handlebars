@@ -1,0 +1,71 @@
+<!-- HEADER -->
+<header class="header  " data-sub="0">
+    <div class="header__top">
+        <div>
+            <a href="../home" class="header__logo">
+                <i class="icon-logo"></i>
+            </a>
+
+            <div class="bordercol"></div>
+            <a href="#" class="header__address">
+                Xem giá, khuyến mãi tại
+                <span>Hà Nội</span>
+            </a>
+
+            <form action="" class="header__search">
+                <input id="skw" type="text" class="input-search" placeholder="Bạn tìm gì..." name="key"
+                    autocomplete="off">
+                <button type="submit">
+                    <i class="icon-search"></i>
+                </button>
+                <div id="search-result"></div>
+            </form>
+            <a href="../cart" class="header__cart menu-info">
+                {{#if isCartEmpty}}
+                <i class="icon-cart"></i>
+                {{else}}
+                <i class="cart_quantity"><span style="color: white;">{{total_order_quantity}}<span></i>
+                {{/if}}
+                <span>Giỏ hàng</span>
+            </a>
+            {{#if lcIsAuthenticated}}
+            <a href="../goToOrdered" class="header__history">Xem Đơn Hàng</a>
+            {{else}}
+            <a href="../goToOrdered" class="header__history">Lịch sử mua hàng</a>
+            {{/if}}
+            <div class="bordercol"></div>
+            <a data-cate="0" data-place="1589" href="#" class="header__hot">
+                <p class="dotnew"><span class="animation"></span></p>Cộng Tác Bán Hàng Cùng Phone Store
+            </a>
+            <div class="header__listtop">
+                <div class="bordercol"></div>
+                <div class="divitem">
+                    <a href="#">24h<br>Công nghệ</a>
+                </div>
+                <div class="bordercol"></div>
+                <div class="divitem">
+                    <a href="#">Hỏi Đáp</a>
+                </div>
+                <div class="bordercol"></div>
+                <div class="divitem">
+                    <a href="#">Game App</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header__main">
+        <div>
+            <ul class="main-menu">
+                <li>
+                    <a href="/dtdd">
+                        <i class="icon"></i>
+                        <span></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</header>
+<!-- HEADER -->

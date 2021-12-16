@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order.css">
+</head>
+
+<body>
+
+    {{> header}}
+
+    <div class="container">
+        <div class="left">
+            <a href="../order" class="active">
+                Danh sách đơn hàng đã mua</a>
+            <a href="../profile" class="">Thông tin cá nhân và sổ địa chỉ</a>
+        </div>
+
+        <div class="right">
+            <div class="user" data-customer="1087356470">
+                Chào anh
+                <b>{{this.userSession.full_name}}</b> - <b>{{this.userSession.phone}}</b>
+                <a href="../logout" class="logout-h">Thoát tài khoản</a>
+                <a class="about-s">|</a>
+                <a class="feed-back">
+                    <img src="../images/icon-mes.png">
+                    Phản hồi, góp ý
+                </a>
+            </div>
+            <div id="overbackgroud"></div>
+            <!-- Đóng góp ý kiến -->
+            <div class="feed-back-detail">
+                <img class="close-p" src="/lich-su-mua-hang/Content/images/iconclose.png">
+                <h2>Phản hồi, góp ý lịch sử mua hàng</h2>
+                <div class="infor-user">
+                    <h3>Thông tin khách hàng:</h3>
+                    <span><span class="sex-f" data-id="1">Anh:</span> <b class="name-f">HÀ VĂN QUANG</b> - <b
+                            class="phone-f">0968904962</b></span>
+                </div>
+                <div class="feed-user">
+                    <h3>Thông tin phản hồi góp ý:</h3>
+                    <textarea id="myTextarea" name="txtFeedback"
+                        placeholder="Vui lòng nhập tiếng Việt có dấu..."></textarea>
+                    <button type="submit" class="submid-feed" onclick="sendFeedbackContent(13);"
+                        disabled="">GỬI</button>
+                    <div class="loader"></div>
+                </div>
+            </div>
+
+            <div class="result"></div>
+
+            <div class="list" id="list_order"> <b>Đơn hàng đã mua gần đây</b>
+                {{!-- <aside class="h-date">
+                    <span>Đây là danh sách đơn hàng bạn đã mua từ ngày <b>19/06/2020</b> đến <b>19/06/2021</b></span>
+                </aside> --}}
+                <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Ngày đặt mua</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                        {{#each this.orders}}
+                        <tr class="" data-id="0">
+                            <td>
+                                <a href="../orderedDetail?order_id={{order_id}}">#{{order_id}}</a>
+                            </td>
+                            <td>
+                                <a href="../orderedDetail?order_id={{order_id}}"><img src="../images/product/intro/{{image_intro}}"
+                                        style="width: 50px; height: 50px;"></a>
+                                <div>
+                                    <a>{{product_name}} {{version}}
+                                        {{#if isOnlyOneItem}} {{else}} và <b>{{totalItem}} sản phẩm</b> khác {{/if}}
+                                    </a>
+                                    <div class="link">
+                                        <a href="../orderedDetail?order_id={{order_id}}">Xem chi tiết</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <b>{{total_amount}}.000₫</b>
+                            </td>
+                            <td><span>{{order_date}}</span></td>
+                            <td>
+                                {{#if isSuccess}}
+                                <i class="success">Đã nhận hàng</i>
+                                {{/if}}
+                                {{#if isPending}}
+                                <i class="" style="color: #F29339;">Đang giao hàng</i>
+                                {{/if}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

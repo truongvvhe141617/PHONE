@@ -1,0 +1,102 @@
+.area-total {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.infor-customer {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px 30px;
+    padding-bottom: 50px;
+}
+
+.gender {
+    padding: 10px 0px;
+}
+
+.imgsp {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 16%;
+}
+
+.infosp {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fillname {
+    padding: 0;
+    float: left;
+    width: 49%;
+    margin: 0 1% 0 0;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.untouched {
+    margin: 0;
+    outline: none;
+    display: block;
+    overflow: hidden;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    padding: 10px;
+    color: #333;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.choosegetgoods {
+    margin: 0;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px 30px;
+}
+
+.choose-content {
+    margin-top: 50px;
+    margin: 0;
+    background: #f6f6f6;
+    padding: 10px 10px;
+    border: 1px solid #e1e1e1;
+    display: inherit!important;
+}
+
+.ordered {
+    outline: none;
+    display: block;
+    overflow: hidden;
+    padding: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    background: #288AD6;
+    width: 30%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    margin-top: 20px;
+}
+

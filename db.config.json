@@ -1,0 +1,9 @@
+{
+    "mysql" : {
+      "host":"localhost",
+      "user"     : "root",
+      "password" : "password",
+      "database" : "apple_store",
+      "connectionLimit" : 50
+    }
+  }

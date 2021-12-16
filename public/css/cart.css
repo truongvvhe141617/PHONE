@@ -1,0 +1,267 @@
+.cartempty {
+    max-width: 600px;
+    font: 18px/18px Arial,Helvetica,sans-serif;
+    color: #333;
+    margin: auto;
+    padding: 0;
+    margin-top: 100px;
+    display: block;
+    overflow: hidden;
+}
+
+.cart_quantity {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: 300px 200px;
+    background-position: -175px 0;
+    height: 18px;
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background-color: tomato;
+    border-radius: 50%;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    text-indent: 0;
+    background-image: none;
+    line-height: 18px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.backhome {
+    font: 14px/18px Arial,Helvetica,sans-serif;
+    transition: .2s;
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid #288ad6;
+    margin: 0 10px;
+    color: #288ad6;
+}
+
+.cart {
+    max-width: 650px;
+    font: 15px/18px Arial,Helvetica,sans-serif;
+    color: #333;
+    margin: auto;
+}
+
+.yourCart {
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: block;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-item {
+    height: 110px;
+    list-style: none;
+    margin: 0;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px 30px;
+}
+
+.area-total {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.infor-customer {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px 30px;
+    padding-bottom: 50px;
+}
+
+.gender {
+    padding: 10px 0px;
+}
+
+.imgsp {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 16%;
+}
+
+.infosp {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fillname {
+    padding: 0;
+    float: left;
+    width: 49%;
+    margin: 0 1% 0 0;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.untouched {
+    margin: 0;
+    outline: none;
+    display: block;
+    overflow: hidden;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    padding: 10px;
+    color: #333;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.choosegetgoods {
+    margin: 0;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px 30px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.ordered {
+    outline: none;
+    display: block;
+    overflow: hidden;
+    padding: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #f79429 0%, #f7712e 100%);
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+.choose-content {
+    margin-top: 50px;
+    margin: 0;
+    background: #f6f6f6;
+    padding: 10px 10px;
+    border: 1px solid #e1e1e1;
+    display: inherit!important;
+}
+
+.finaltotal {
+    margin: 0;
+    padding: 20px 30px;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.btn-click {
+    padding: 0;
+    float: left;
+    width: 49%;
+    margin: 2% 1% 2% 0;
+    cursor: pointer;
+}
+
+.choosenumber {
+    font: 14px/18px Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    border-radius: 3px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+}
+
+.minus {
+    font: 14px/18px Arial, Helvetica, sans-serif;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    float: left;
+    border-right: 1px solid #dfdfdf;
+    background: #fff;
+    width: 32%;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.number {
+    font: 14px/18px Arial, Helvetica, sans-serif;
+    line-height: 30px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #333;
+    float: left;
+    width: 33%;
+    height: 30px;
+    text-align: center;
+}
+
+.plus {
+    font: 14px/18px Arial, Helvetica, sans-serif;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    float: right;
+    border-left: 1px solid #dfdfdf;
+    background: #fff;
+    width: 32%;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    pointer-events: all;
+}

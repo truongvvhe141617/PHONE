@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body style="background-color: #f0f0f0;">
+
+    {{> header}}
+
+    {{#if this.cartEmpty}}
+    <section>
+        <div class="cartempty" style="text-align: center;">
+            <i class="cartnew-empty"><img src="../images/cart-empty.png"></i>
+            <p style="padding: 12px;">Không có sản phẩm nào trong giỏ hàng</p>
+            <a href="../home" class="backhome">Về trang chủ</a>
+            <p style="font-size: 14px; padding: 12px;">Khi cần trợ giúp vui lòng gọi <a
+                    href="tel:18001060;">0968.904.962</a>
+                hoặc <a href="">quanghavan29@gmail.com</a> (7h30 - 22h)</p>
+        </div>
+    </section>
+    {{else}}
+    <form action="../order" method="POST">
+        <div class="cart">
+            <div class="yourCart top-content"><a href="../home" class="buymore">Mua thêm sản phẩm
+                    khác</a><span>Giỏ hàng của bạn</span></div>
+            <div class="middleCart">
+                <ul class="listing-cart">
+                    {{#each this.cart_list}}
+                    <li class="product-item" style="border-bottom: 1px solid #dddddd;">
+                        <div class="imgsp">
+                            <a href="../product-detail?product_detail_id={{product_detail_id}}&product_id={{product_id}}&version={{version}}&color={{color}}"
+                                target="_blank">
+                                <img src="../images/product/intro/{{image_intro}}" width="90%">
+                            </a>
+                        </div>
+                        <div class="infosp" style="position: relative;">
+                            <div class="left" style="position: absolute; left: 0px;">
+                                <div class="name-price">
+                                    <div class="underline">
+                                        <a
+                                            href="../product-detail?product_detail_id={{product_detail_id}}&product_id={{product_id}}&version={{version}}&color={{color}}">
+                                            Điện thoại {{product_name}}
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="choose-color" style="padding-top: 15px; margin-bottom: 15px;">
+                                    <aside><label style="color: #333333;">Color: {{color}}</label>
+                                    </aside>
+                                </div>
+                                <a href="../detele-cart-item?product_detail_id={{product_detail_id}}"
+                                    style="color: #F30C28;"> Xóa </a>
+                            </div>
+                            <div class="right" style="position: absolute; right: 0px;">
+                                <div style="padding-left: 15px; padding-bottom: 15px;">
+                                    <span style="color: #F30C28;"> {{present_price}}.000₫</span><br />
+                                    {{#if isSale}}<strike>{{old_price}}.000₫</strike>{{/if}}
+                                </div>
+                                <div class="choosenumber">
+                                    <div class="minus" style="pointer-events: all;">
+                                        <div style="border: none; cursor: pointer;" id="modal-minus">
+                                            <a
+                                                href="../update-cart-item?product_detail_id={{product_detail_id}}&select=minus">
+                                                <img src="../images/minus.jpg" width="100%"></a>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="number" value="{{order_quantity}}" style="border: none;"
+                                        id="modal-quantity" name="quantity" />
+                                    <div class="plus" style="pointer-events: all;">
+                                        <div style="border: none; cursor: pointer;" id="modal-plus">
+                                            <a
+                                                href="../update-cart-item?product_detail_id={{product_detail_id}}&select=plus">
+                                                <img src="../images/plus.jpg" width="100%"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+                <div class="area-total" style="border-bottom: 1px solid #cccccc;">
+                    <div>
+                        <p style="padding: 10px 0px;">Tạm tính ({{total_order_quantity}} sản phẩm):</p>
+                        <strong>Tổng tiền:</strong>
+                    </div>
+
+                    <div style="padding-bottom: 10px;">
+                        <p style="padding: 10px 0px;">{{total_amount_ordered}}.000₫</p>
+                        <strong style="color: #F30C28;">{{total_amount_ordered}}.000₫</strong>
+                    </div>
+                </div>
+                <div class="infor-customer">
+                    <h4 style="padding: 5px 0px;">THÔNG TIN KHÁCH HÀNG:</h4>
+                    <div class="sex-customer gender">
+                        {{!-- <input type="radio" name="gender" value="1" style="cursor: pointer;" checked="true"
+                            onclick="onlyOne(this)"> Anh
+                        <input type="radio" name="gender" value="0" style="margin-left: 10px; cursor: pointer;"
+                            onclick="onlyOne(this)">
+                        Chị --}}
+                    </div>
+                    <div class="fillinform">
+                        <div class="fillname" style="padding-left: 7px;"><input placeholder="Họ và Tên" maxlength="50" class="capitalize untouched"
+                                name="full_name" required="required" value="{{this.lcUserSessison.full_name}}"/>
+                            <!---->
+                        </div>
+                        <div class="fillname"><input placeholder="Email" type="email" class="untouched" name="email"
+                                required="required" value="{{this.lcUserSessison.email}}"/>
+                            <!---->
+                        </div>
+                    </div>
+                </div>
+                <div class="choosegetgoods">
+                    <div class="choose-content current">
+                        <div class="deli-address">
+                            <h4 style="font-size: 14px; padding-bottom: 12px;">ĐỊA CHỈ NHẬN HÀNG</h4>
+                            <div class=""><input placeholder="Số điện thoại"
+                                    class="capitalize untouched pristine required" name="phone"
+                                    required="required" value="{{this.lcUserSessison.phone}}"/>
+                                <!---->
+                            </div>
+                            <div class="" style="margin-top: 10px;"><input placeholder="Địa chỉ nhận hàng"
+                                    class="capitalize untouched pristine required" name="address" 
+                                    required="required" value="{{this.lcUserSessison.address}}"/>
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="finaltotal">
+                    <div class="totalmoney"
+                        style="display: flex; justify-content: space-between; padding-bottom: 20px; font-size: 18px;">
+                        <strong>Tổng tiền:</strong>
+                        <strong style="color: #F30C28;">{{total_amount_ordered}}.000₫</strong>
+                    </div>
+                    <button type="submit" class="ordered"><b style="text-transform:uppercase">Đặt hàng</b></button>
+                    <small style="display: block; text-align: center; color: #666; padding:15px;">
+                        Bạn có thể chọn hình thức thanh toán sau khi đặt hàng</small>
+                </div>
+            </div>
+        </div>
+    </form>
+    {{/if}}
+
+
+    <script>
+
+        function onlyOne(radio) {
+            var radios = document.getElementsByName('gender');
+            radios.forEach((item) => {
+                if (item !== radio) item.checked = false;
+            });
+        }
+    </script>
+</body>
+
+</html>

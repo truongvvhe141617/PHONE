@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/product_detail.css">
+    <link rel="stylesheet" href="css/modal-cart.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    {{> header }}
+    <!-- HEADER -->
+
+    <section data-id="228737" data-cate-id="42" class="detail">
+        <ul class="breadcrumb">
+            <li>
+                <a href="#">Điện thoại</a>
+                <meta property="position" content="1">
+            </li>
+            <li>
+                <span>›</span>
+                <a href="#">Điện thoại {{this.product.category_name}}</a>
+                <meta property="position" content="2">
+            </li>
+        </ul>
+        <h1>Điện thoại {{this.product.product_name}} {{this.product.version}}</h1>
+        <div class="box_main">
+            <div class="box_left">
+                <div class="box01">
+                    <!-- IMAGE -->
+                    <div class="box01__show">
+                        <div class="show-tab loading" data-gallery-id="featured-images-gallery" data-color-id="0">
+                            <div class="detail-slider owl-carousel">
+                                <a href="javascript:void(0)" class="slider-item "
+                                    data-gallery-id="featured-images-gallery" data-color-id="0" data-picture-id="112916"
+                                    data-video-id="" data-index="7" data-time="0">
+                                    <img class="owl-lazy" src="../images/product/detail/{{this.product.image_detail}}"
+                                        alt="iPhone 12 256GB" />
+                                </a>
+                            </div>
+                            <div class="total-imgslider">
+                                <a id="show-popup-featured-images-gallery" style="display: block" href="#"
+                                    data-is-360-gallery="False" class="read-full"
+                                    data-gallery-id="featured-images-gallery" data-color-id="0">Xem tất cả điểm nổi
+                                    bật</a>
+                                <div class="counter"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- IMAGE -->
+                    <div class="scrolling_inner">
+                        <div class="box01__tab scrolling">
+                            <div id="thumb-featured-images-gallery-0" class="item itemTab "
+                                data-gallery-id="featured-images-gallery" data-color-id="0" data-is-full-spec="False"
+                                data-color-order-id="0">
+                                <div class="item-border">
+                                    <i class="icondetail-noibat"></i>
+                                </div>
+                                <p>Điểm nổi bật</p>
+                            </div>
+                            {{#each this.colors}}
+                            <div id="thumb-color-images-gallery-12"
+                                class="item itemTab {{#if isActive}} active {{/if}} "
+                                data-gallery-id="color-images-gallery" data-color-id="12" data-is-full-spec="False"
+                                data-color-order-id="0">
+                                <a
+                                    href="../product-detail?product_detail_id={{product_detail_id}}&product_id={{product_id}}&color={{color}}&version={{version}}">
+                                    <div class="item-border">
+                                        <img src="../images/product/intro/{{image_intro}}" alt="Tr&#x1EAF;ng" />
+                                    </div>
+                                </a>
+                                <p>{{color}}</p>
+                            </div>
+                            {{/each}}
+                            <div id="thumb-unbox-gallery-0" class="item itemTab  is-show-popup"
+                                data-gallery-id="unbox-gallery" data-color-id="0" data-is-full-spec="False"
+                                data-color-order-id="0">
+                                <div class="item-border">
+                                    <i class="icondetail-box"></i>
+                                </div>
+                                <p>Hình mở hộp</p>
+                            </div>
+                            <div id="thumb-360-degree-gallery-0" class="item itemTab  is-show-popup"
+                                data-gallery-id="360-degree-gallery" data-color-id="0" data-is-full-spec="False"
+                                data-color-order-id="0">
+                                <div class="item-border">
+                                    <i class="icondetail-360do"></i>
+                                </div>
+                                <p>Hình 360 độ</p>
+                            </div>
+                            <div id="thumb-specification-gallery-0" class="item itemTab  is-show-popup"
+                                data-gallery-id="specification-gallery" data-color-id="0" data-is-full-spec="True"
+                                data-color-order-id="0">
+                                <div class="item-border">
+                                    <i class="icondetail-thongso"></i>
+                                </div>
+                                <p>Thông số kỹ thuật</p>
+                            </div>
+                            <div id="thumb-article-gallery-0" class="item itemTab  is-show-popup"
+                                data-gallery-id="article-gallery" data-color-id="0" data-is-full-spec="False"
+                                data-color-order-id="0">
+                                <div class="item-border">
+                                    <i class="icondetail-danhgia"></i>
+                                </div>
+                                <p>Bài viết đánh giá</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="policy_intuitive cate42 scenarioNomal">
+                    <div class="policy">
+                        <ul class="policy__list">
+                            <li>
+                                <div class="iconl">
+                                    <i class="icondetail-doimoi"></i>
+                                </div>
+                                <p>
+                                    Hư gì đổi nấy <b>12 tháng</b> tại 2599 siêu thị toàn quốc. (miễn phí tháng đầu)
+                                    <a href="#" title="Chính sách đổi trả">
+                                        Xem Chi tiết
+                                    </a>
+                                </p>
+                            </li>
+                            <li data-field="IsSameBHAndDT">
+                                <div class="iconl">
+                                    <i class="icondetail-baohanh"></i>
+                                </div>
+                                <p>
+                                    Bảo hành <b>chính hãng điện thoại 1 năm</b>
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="comment-btn">
+                            <a href="#" class="comment-btn__item">Viết đánh giá</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box_right">
+                <div class="scrolling_inner">
+                    <div class="box03 group desk">
+                        {{#each this.versions}}
+                        <a href="../product-detail?product_detail_id={{product_detail_id}}&product_id={{product_id}}&color={{color}}&version={{version}}"
+                            data-index="0" class="box03__item item 
+                        {{#if isActive}} act {{/if}}">{{version}}</a>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="box04 box_normal">
+                    <div class="box04__txt">
+                        Giá tại <a href="javascript:;" onclick="OpenLocation()">Hà Nội</a>
+                    </div>
+                    <div class="price-one">
+                        <div class="box-price">
+                            <p class="box-price-present">{{this.product.present_price}}.000&#x20AB; *</p>
+                            {{#if this.product.isSale}}
+                            <p class="box-price-old">{{this.product.old_price}}.000&#x20AB;</p>
+                            {{/if}}
+                            {{#if this.product.is_credit}}
+                            <span class="label label--black">Trả góp 0%</span>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="block block-price1">
+                        <div class="block__promo">
+                            <div class="pr-top">
+                                <h1>Cấu hình điện thoại {{this.product.product_name}} {{this.product.version}} </h1>
+                            </div>
+                            <div class="pr-content" style="margin-top: -10px; margin-bottom: -20px;">
+                                <div class="pr-item">
+                                    <div class="parameter">
+                                        <ul class="parameter__list 228737 active">
+                                            <li data-index="0" data-prop="0">
+                                                <p class="lileft">Màn hình:</p>
+                                                <div class="liright">
+                                                    <span>{{this.product.screen}}</span>
+                                                </div>
+                                            </li>
+                                            <li data-index="0" data-prop="0">
+                                                <p class="lileft">Hệ điều hành</p>
+                                                <div class="liright">
+                                                    <span class="">{{this.product.operating_system}}</span>
+                                                </div>
+                                            </li>
+                                            <li data-index="0" data-prop="0">
+                                                <p class="lileft">Camera sau:</p>
+                                                <div class="liright">
+                                                    <span class="">{{this.product.rear_camera}}</span>
+                                                </div>
+                                            </li>
+                                            <li data-index="0" data-prop="0">
+                                                <p class="lileft">Camera trước:</p>
+                                                <div class="liright">
+                                                    <span class="">{{this.product.front_camera}}</span>
+                                                </div>
+                                            </li>
+                                            <li data-index="0" data-prop="0">
+                                                <p class="lileft">Chip:</p>
+                                                <div class="liright">
+                                                    <span class="">{{this.product.chip}}</span>
+                                                </div>
+                                            </li>
+                                            <li data-index="0" data-prop="0">
+                                                <p class="lileft">RAM:</p>
+                                                <div class="liright">
+                                                    <span class="">{{this.product.ram}}</span>
+                                                </div>
+                                            </li>
+                                            <li data-index="0" data-prop="0">
+                                                <p class="lileft">Bộ nhớ trong:</p>
+                                                <div class="liright">
+                                                    <span class="">{{this.product.version}}</span>
+                                                </div>
+                                            </li>
+                                            <li data-index="0" data-prop="0">
+                                                <p class="lileft">SIM:</p>
+                                                <div class="liright">
+                                                    <span>{{this.product.sim}}</span>
+                                                </div>
+                                            </li>
+                                            <li data-index="0" data-prop="0">
+                                                <p class="lileft">Pin, Sạc:</p>
+                                                <div class="liright">
+                                                    <span>{{this.product.pin}}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <span class="con_hang only">Còn hàng</span>
+                        <script>
+                            setTimeout(function () {
+                                document.querySelectorAll(".block-button").forEach(function (item) {
+                                    item.classList.remove('hide');
+                                });
+                                document.querySelectorAll(".isshowdelivery").forEach(function (item) {
+                                    item.classList.remove('hide');
+                                });
+                            }, 100);
+                        </script>
+                        <div class="block-button normal hide">
+                            <a href="#" class="btn-buynow jsBuy" id="btn-ordered">MUA NGAY</a>
+                            <a href="#" class="btn-ins">
+                                MUA TRẢ GÓP 0%
+                                <span>Duyệt hồ sơ trong 5 phút</span>
+                            </a>
+                            <a href="#" class="btn-ins">
+                                TRẢ GÓP 0% QUA THẺ
+                                <span>Visa, Mastercard, JCB</span>
+                            </a>
+                        </div>
+                        <div id="app"></div>
+                        <p class="callorder">Gọi đặt mua <a href="#">0968.904.962</a> (7:30 - 22:00)</p>
+                    </div>
+                </div>
+                <div class="border7"></div>
+            </div>
+        </div>
+        <!-- Buy -->
+    </section>
+
+    <!-- Modal Cart -->
+    {{> modal-cart}}
+
+    <script>
+
+        document.getElementById("btn-ordered").onclick = function () {
+            document.getElementById("modal-cart").style.display = 'block';
+        }
+
+        document.getElementById("exit-modal-cart").onclick = function () {
+            document.getElementById("modal-cart").style.display = 'none';
+        }
+
+        document.getElementById('modal-plus').onclick = function () {
+            let quantity = parseInt(document.getElementById("modal-quantity").value);
+            if (quantity < 5) {
+                document.getElementById("modal-quantity").value = quantity + 1;
+            }
+        }
+
+        document.getElementById('modal-minus').onclick = function () {
+            let quantity = parseInt(document.getElementById("modal-quantity").value);
+            if (quantity > 1) {
+                document.getElementById("modal-quantity").value = quantity - 1;
+            }
+        }
+
+        document.getElementById('checkbox').checked = true;
+
+        function onlyOne(checkbox) {
+            var checkboxes = document.getElementsByName('product_detail_id');
+            checkboxes.forEach((item) => {
+                if (item !== checkbox) item.checked = false;
+            });
+        }
+
+    </script>
+</body>
+
+</html>

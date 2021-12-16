@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    {{> header}}
+
+    <div class="wrapper login sf" style="max-width: 500px;">
+        <div class="d1 step1" style="margin-top: 30px;">
+            <div>
+                <span style="font-size: 20px;">Mã xác nhận đã được gửi đến email của bạn</span>
+            </div>
+            <div style="margin-bottom: 20px; margin-top: 15px;">
+                <b style="font-size: 20px; margin-top: 5px;">{{this.email}}</b>
+            </div>
+            <form action="../verifyEmail" method="POST">
+                <input type="hidden" value="{{email}}" name="email">
+                <input type="tel" name="codeOTP" placeholder="Nhập mã xác nhận gồm 4 chữ số" maxlength="4"
+                    autocomplete="one-time-code" class="input_code" required="required">
+                <div>
+                    <label style="color: #FF0011;">{{this.message}}</label>
+                </div>
+                <button type="submit" class="btn" style="margin-bottom: 40px; cursor: pointer; margin-top: 15px;">Xác
+                    Nhận</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

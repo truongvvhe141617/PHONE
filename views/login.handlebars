@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    {{> header}}
+
+    <div class="wrapper login sf" style="max-width: 500px;">
+        <div class="d1 step1">
+            <img src="../images/i1.png" style="margin-top: 30px; margin-bottom: 35px;">
+            <span style="font-size: 20px;;">Tra cứu thông tin đơn hàng</span>
+            <p style="color: red; font-size: 16px; margin-top: 15px;">{{this.notFoundEmail}}</p>
+            <form action="../login" method="POST">
+                <input type="email" name="email" placeholder="Nhập Email Mua Hàng Của Bạn"
+                    class="input_email" style="margin-top: 25px;" required="required">
+                <label class="hide"></label>
+                <button type="submit" class="btn" style="margin-bottom: 40px; cursor: pointer;">Tiếp tục</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

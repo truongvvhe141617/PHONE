@@ -1,0 +1,57 @@
+<div class="modal-cart" style="display: none;" id="modal-cart">
+    <div class="choose-promo">
+        <div class="close-popup" id="exit-modal-cart">
+            <img src="../images/exit-modal-cart.png" alt="" style="width: 90%;">
+        </div>
+        <div class="namePro">
+            <span class="namePro__product-name" style="font-size: 16px;">Điện thoại {{this.product.product_name}}
+                {{this.product.version}}</span>
+            <p style="font-size: 16px; margin-top: 5px; color: #F30C28;">
+                {{this.product.present_price}}.000&#x20AB; *
+                {{#if this.product.isSale}}
+                <span
+                    style="color: #979797; text-decoration: line-through; margin-left: 10px;">{{this.product.old_price}}.000&#x20AB;</span>
+                {{/if}}
+            </p>
+        </div>
+        <form action="../cart" method="POST">
+            <div class="choose-colorPro"><strong>Chọn màu:</strong>
+                <ul class="list-product">
+                    {{#each this.colors}}
+                    <li class="li-product">
+                        <div class="imgPro">
+                            <span class="imgPro__helper" style="padding: 2px;">
+                                <img src="../images/product/intro/{{image_intro}}" style="width: 100%;" />
+                            </span>
+                        </div>
+                        <div>
+                            <input type="checkbox" style="margin-top: 10px; cursor: pointer;" 
+                                name="product_detail_id" id="checkbox"
+                                value="{{product_detail_id}}" onclick="onlyOne(this)"/><br />
+                            <span>{{color}}</span>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+                <div class="choose-amount"><span style="font-size: 15px; margin-right: 5px;">Chọn số lượng: </span>
+                    <div class="choosenumber">
+                        <div class="minus" style="pointer-events: all;">
+                            <div style="border: none; cursor: pointer;" id="modal-minus">
+                                <img src="../images/minus.jpg" width="100%">
+                            </div>
+                        </div>
+                        <input type="text" class="number" value="1" style="border: none;" id="modal-quantity" name="quantity"/>
+                        <div class="plus" style="pointer-events: all;">
+                            <div style="border: none; cursor: pointer;" id="modal-plus">
+                                <img src="../images/plus.jpg" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding-bottom: 20px; border-bottom: 1px solid #d7d7d7; margin-bottom: 10px;"></div>
+            <button class="ordered" type="submit">Thêm vào giỏ hàng</button>
+            <a href="../cart" class="seecart">Xem giỏ hàng</a>
+        </form>
+    </div>
+</div>

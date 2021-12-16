@@ -1,0 +1,153 @@
+<!-- FILLTER -->
+{{> fillter }}
+<!-- FILLTER -->
+
+<!-- LIST PRODUCT -->
+<section id="categoryPage" data-id="42" data-name="&#x110;i&#x1EC7;n tho&#x1EA1;i" data-template="cate">
+
+    <div class="box-sort ">
+        <p class="sort-total"><b>Hiện có {{this.product.totalProduct}}</b> Điện thoại <strong class="manu-sort">
+                {{this.product.name}}
+            </strong></p>
+        <div class="box-checkbox extend">
+
+            {{#if this.isSale}}
+            <a href="../fillter?isSale=false" data-type="sp2020" class="c-checkitem active">
+                <span class="tick-checkbox"></span>
+                <p>Giảm giá</p>
+            </a>
+            {{else}}
+            <a href="../fillter?isSale=true" data-type="sp2020" class="c-checkitem">
+                <span class="tick-checkbox"></span>
+                <p>Giảm giá</p>
+            </a>
+            {{/if}}
+
+            {{#if this.isCredit}}
+            <a href="../fillter?isCredit=false" data-type="installment0" class="c-checkitem active">
+                <span class="tick-checkbox"></span>
+                <p>Trả Góp 0%</p>
+            </a>
+            {{else}}
+            <a href="../fillter?isCredit=true" data-type="installment0" class="c-checkitem">
+                <span class="tick-checkbox"></span>
+                <p>Trả Góp 0%</p>
+            </a>
+            {{/if}}
+
+            {{#if this.isMonopoly}}
+            <a href="../fillter?isMonopoly=false" data-type="monopoly" class="c-checkitem active">
+                <span class="tick-checkbox"></span>
+                <p>Độc quyền</p>
+            </a>
+            {{else}}
+            <a href="../fillter?isMonopoly=true" data-type="monopoly" class="c-checkitem">
+                <span class="tick-checkbox"></span>
+                <p>Độc quyền</p>
+            </a>
+            {{/if}}
+
+            {{#if this.isNew}}
+            <a href="../fillter?isNew=false" data-type="new" class="c-checkitem active">
+                <span class="tick-checkbox"></span>
+                <p>Mới</p>
+            </a>
+            {{else}}
+            <a href="../fillter?isNew=true" data-type="new" class="c-checkitem">
+                <span class="tick-checkbox"></span>
+                <p>Mới</p>
+            </a>
+            {{/if}}
+
+        </div>
+        <div class="sort-select ">
+            <p class="click-sort">Xếp theo: <span class="sort-show">N&#x1ED5;i b&#x1EAD;t</span></p>
+            <div class="sort-select-main sort ">
+                <p><a href="javascript:;" class="check" data-id="9"><i></i>Nổi bật</a></p>
+                <p><a href="" class="" data-id="5"><i></i>% Giảm</a></p>
+                <p><a href="javascript:;" class="" data-id="3"><i></i>Giá cao đến thấp</a></p>
+                <p><a href="javascript:;" class="" data-id="2"><i></i>Giá thấp đến cao</a></p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="container-productbox">
+        <div id="preloader">
+            <div id="loader"></div>
+        </div>
+        <ul class="listproduct">
+            {{#if isEmpty}}
+            <div id="empty"><i class="empty"></i>Không có sản phẩm nào phù hợp với tiêu chí tìm kiếm!<p><a
+                        href="../home" onclick="reloadURL()">Xem tất cả điện thoại</a></p>
+            </div>
+            {{else}}
+            {{#each this.products}}
+            <li class=" item ajaxed" data-index="1" data-id="213031" data-issetup="0" data-maingroup="13"
+                data-subgroup="1491" data-type="1" data-vehicle="1" data-productcode="0131491002273">
+                <a href="../product-detail?product_detail_id={{product_detail_id}}&product_id={{product_id}}&version={{version}}&color={{color}}"
+                    data-s="Nomal"
+                    data-scenario="S&#x1EA3;n ph&#x1EA9;m b&#xEC;nh th&#x1B0;&#x1EDD;ng kh&#xF4;ng k&#x1ECB;ch b&#x1EA3;n"
+                    data-site="1" data-pro="3" data-cache="True"
+                    data-first="mwg.business.Services.ProductService.GetProductList">
+                    <div class="item-label">
+                        {{#if is_credit}}
+                        <span class="lb-tragop">Trả góp 0%</span>
+                        {{/if}}
+                    </div>
+                    <div class="item-img item-img_42">
+                        <img class="" src="../images/product/intro/{{image_intro}}" alt="iPhone 12 64GB">
+                        {{#if is_monopoly}}
+                        <img src="../images/monopoly.png" loading="lazy" class="lbliconimg lbliconimg_42 tgdd">
+                        {{/if}}
+                    </div>
+
+                    <p class='result-label temp1'><img alt='TRỢ GIÁ MÙA DỊCH' src='../images/icon1-50x50.png'><span>TRỢ
+                            GIÁ MÙA DỊCH</span></p>
+                    <h3 title="&#x110;i&#x1EC7;n tho&#x1EA1;i iPhone 12 64GB">
+                        {{product_name}} {{version}}
+                    </h3>
+                    {{!-- <p class="item-txt-online">Online gia&#x301; re&#x309;</p> --}}
+                    <div class="box-p">
+                        {{#if isSale}}<p class="price-old black">{{old_price}}.000&#x20AB;</p>
+                        <span class="percent">-{{sale}}%</span>
+                        {{/if}}
+                    </div>
+                    <strong class="price">{{present_price}}.000&#x20AB;</strong>
+                </a>
+                <div class="item-rating">
+                    <p>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star-dark"></i>
+                    </p>
+                    <p class="item-rating-total">37</p>
+                </div>
+
+                <div class="item-bottom">
+                    <a href="#" class="shiping"></a>
+                </div>
+                <div class="utility">
+                    <p>Màn hình: {{screen}}</p>
+                    <p>Chip: {{chip}}</p>
+                    <p>RAM {{ram}}, ROM {{version}}</p>
+                    <p>Camera sau: {{rear_camera}}</p>
+                    <p>Camera trước: {{front_camera}}</p>
+                    <p>Pin {{pin}}</p>
+                </div>
+            </li>
+            {{/each}}
+            {{/if}}
+        </ul>
+        {{!-- <div class="view-more ">
+            <a href="javascript:;">Xem thêm <span class="remain">1</span> &#x110;i&#x1EC7;n tho&#x1EA1;i</a>
+        </div> --}}
+    </div>
+    <div class="watched"></div>
+    <div class="overlay"></div>
+</section>
+<!-- LIST PRODUCT -->

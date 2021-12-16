@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order.css">
+</head>
+
+<body>
+
+    {{> header}}
+
+    <div class="container">
+        <div class="left">
+            <a href="../order" class="active">
+                Danh sách đơn hàng đã mua</a>
+            <a href="../profile" class="">Thông tin cá nhân và sổ địa chỉ</a>
+        </div>
+
+        <div class="right">
+            <div class="user" data-customer="1087356470">
+                Chào anh
+                <b>{{this.userSession.full_name}}</b> - <b>{{this.userSession.phone}}</b>
+                <a href="../logout" class="logout-h">Thoát tài khoản</a>
+                <a class="about-s">|</a>
+                <a class="feed-back">
+                    <img src="../images/icon-mes.png">
+                    Phản hồi, góp ý
+                </a>
+            </div>
+            <div id="overbackgroud"></div>
+            <!-- Đóng góp ý kiến -->
+            <div class="feed-back-detail">
+                <img class="close-p" src="/lich-su-mua-hang/Content/images/iconclose.png">
+                <h2>Phản hồi, góp ý lịch sử mua hàng</h2>
+                <div class="infor-user">
+                    <h3>Thông tin khách hàng:</h3>
+                    <span><span class="sex-f" data-id="1">Anh:</span> <b class="name-f">HÀ VĂN QUANG</b> - <b
+                            class="phone-f">0968904962</b></span>
+                </div>
+                <div class="feed-user">
+                    <h3>Thông tin phản hồi góp ý:</h3>
+                    <textarea id="myTextarea" name="txtFeedback"
+                        placeholder="Vui lòng nhập tiếng Việt có dấu..."></textarea>
+                    <button type="submit" class="submid-feed" onclick="sendFeedbackContent(13);"
+                        disabled="">GỬI</button>
+                    <div class="loader"></div>
+                </div>
+            </div>
+            <div class="result"></div>
+            <div class="detail" id="detail_order">
+                <div class="title">
+                    <span>
+                        Trạng thái:
+                        {{#if order.isPending}}
+                        <i style="color: #F29339;">Đang giao hàng</i>
+                        {{/if}}
+
+                        {{#if order.isSuccess}}
+                        <i class="success">Đã nhận hàng</i>
+                        {{/if}}
+                    </span>
+                    <p>Chi tiết đơn hàng
+                        <span style="color: #288AD6;">#{{order_id}}</span>
+                        - {{order.order_date}}
+                    </p>
+                </div>
+                {{#each this.items}}
+                <div class="item">
+                    <a href="../product-detail?product_detail_id={{product_detail_id}}&product_id={{product_id}}&version={{version}}&color={{color}}"
+                        class="fl"><img src="../images/product/intro/{{image_intro}}"></a>
+                    <div class="fl" data-apply="">
+                        <a
+                            href="../product-detail?product_detail_id={{product_detail_id}}&product_id={{product_id}}&version={{version}}&color={{color}}">{{product_name}}
+                            {{version}}</a>
+                        <p>Giảm {{sale}}%</p>
+                        <i>Màu: <b>{{color}}</b></i>
+                        <i>Số lượng: <b>{{quantity}}</b></i>
+                    </div>
+                    <div class="fr">
+                        <b>{{present_price}}.000₫</b>
+                        <em>{{old_price}}.000₫</em>
+                    </div>
+                </div>
+                {{/each}}
+                <div class="sum">
+                    <span><label>Giá tạm tính:</label> <i>{{order.total_amount}}.000₫</i></span>
+                    <span>
+                        <img src="../images/success.png" style="width: 16px; height: 16px; margin-right: -20px;">
+                        <strong class="paid">Đã thanh toán:</strong> <b>{{order.total_amount}}.000₫</b></span>
+                </div>
+                <div class="info type0">
+                    <b>Địa chỉ và thông tin người nhận hàng:</b>
+                    <span>Bạn: {{order.full_name}}</span>
+                    <span>Số điện thoại: {{order.phone}}</span>
+                    <span>Địa chỉ nhận hàng: {{order.address}}</span>
+                </div>
+                <div class="pay">
+                    <a href="../order" class="back">Quay lại danh sách đơn hàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+    {{> header}}
+
+    <div class="container">
+        <div class="left">
+            <a href="../order">
+                Danh sách đơn hàng đã mua</a>
+            <a href="../profile" class="active" style="margin-top: 25px;">Thông tin cá nhân và sổ địa chỉ</a>
+        </div>
+
+        <div class="right">
+            <div class="user" data-customer="1087356470">
+                Chào Bạn
+                <b>{{this.userSession.full_name}}</b> - <b>{{this.userSession.phone}}</b>
+                <a href="" class="logout-h">Thoát tài khoản</a>
+                <a class="about-s">|</a>
+                <a class="feed-back">
+                    <img src="../images/icon-mes.png">
+                    Phản hồi, góp ý
+                </a>
+            </div>
+            <div id="overbackgroud"></div>
+            <!-- Đóng góp ý kiến -->
+            <div class="feed-back-detail">
+                <img class="close-p" src="/lich-su-mua-hang/Content/images/iconclose.png">
+                <h2>Phản hồi, góp ý lịch sử mua hàng</h2>
+                <div class="infor-user">
+                    <h3>Thông tin khách hàng:</h3>
+                    <span><span class="sex-f" data-id="1">Anh:</span> <b class="name-f">{{this.userSession.full_name}}</b> - <b
+                            class="phone-f">{{this.userSession.phone}}</b></span>
+                </div>
+                <div class="feed-user">
+                    <h3>Thông tin phản hồi góp ý:</h3>
+                    <textarea id="myTextarea" name="txtFeedback"
+                        placeholder="Vui lòng nhập tiếng Việt có dấu..."></textarea>
+                    <button type="submit" class="submid-feed" onclick="sendFeedbackContent(13);"
+                        disabled="">GỬI</button>
+                    <div class="loader"></div>
+                </div>
+            </div>
+
+            <div class="result"></div>
+
+            <form action="../profile" method="POST">
+            <div class="list" id="list_order">
+                <h1 style="font-size: 16px; padding-bottom: 10px;">THÔNG TIN CÁ NHÂN</h1>
+                <div class="infor-customer">
+                    {{!-- <div class="sex-customer gender">
+                        <input type="radio" name="gender" value="male" style="cursor: pointer;" checked="true"
+                            onclick="onlyOne(this)"> Anh
+                        <input type="radio" name="gender" value="female" style="margin-left: 10px; cursor: pointer;"
+                            onclick="onlyOne(this)">
+                        Chị
+                    </div> --}}
+                    <div class="fillinform" style="padding-top: 5px;">
+                        <div class="fillname" style="padding-left: 7px;"><input placeholder="Họ và Tên" maxlength="50"
+                                class="capitalize untouched" name="full_name" required="required" value="{{this.userSession.full_name}}"/>
+                            <!---->
+                        </div>
+                        <div class="fillname"><input placeholder="Email" type="email" class="untouched" name="email"
+                                required="required" readonly="readonly" value="{{this.userSession.email}}"/>
+                            <!---->
+                        </div>
+                    </div>
+                </div>
+                <div class="choosegetgoods">
+                    <div class="choose-content current">
+                        <div class="deli-address">
+                            <h4 style="font-size: 14px; padding-bottom: 12px;">ĐỊA CHỈ NHẬN HÀNG</h4>
+                            <div class=""><input placeholder="Số điện thoại"
+                                    class="capitalize untouched pristine required" name="phone" 
+                                    required="required" readonly="readonly" value="{{this.userSession.phone}}"/>
+                                <!---->
+                            </div>
+                            <div class="" style="margin-top: 10px;"><input placeholder="Địa chỉ nhận hàng"
+                                    class="capitalize untouched pristine required" name="address" 
+                                    required="required" value="{{this.userSession.address}}"/>
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="ordered"><b style="text-transform:uppercase">Cập Nhật</b></button>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
